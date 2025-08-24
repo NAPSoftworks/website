@@ -21,14 +21,14 @@ withDefaults(defineProps<Props>(), {
 <template>
     <div class="bg-muted min-h-screen">
         <Head title="NAP Softworks" />
-        <div class="bg-gray-600/20 shadow-lg bg-gradient">
-            <div class="flex items-center">
-                <div class="ml-auto">
+        <div class="bg-gray-600/20 shadow-lg bg-gradient h-16">
+            <div class="flex max-w-3/4 mx-auto justify-between items-center h-full">
+                <div>
                     <Link :href="route('home')" title="NAP Softworks home page">
-                        <img :src="`/img/nap_softworks_logo_icon.png`" class="mx-auto max-h-10" alt="NAP Softworks logo" />
+                        <img :src="`/img/nap_softworks_logo_icon.png`" class="max-h-10" alt="NAP Softworks logo" />
                     </Link>
                 </div>
-                <NavigationMenu class="ml-auto max-w-1/2 py-3">
+                <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-300"> Home </NavigationMenuLink>
