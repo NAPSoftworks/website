@@ -35,4 +35,21 @@ export interface User {
     updated_at: string;
 }
 
+export interface Category {
+    id: number;
+    name: string;
+    description: string;
+    is_public: boolean;
+    created_at: string;
+    updated_at: string;
+    products?: Product[];
+}
+
+export interface Product {
+    id: number;
+    name: string;
+    description: string;
+    is_public: boolean;
+}
+
 export type BreadcrumbItemType = BreadcrumbItem;

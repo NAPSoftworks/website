@@ -34,7 +34,7 @@ withDefaults(defineProps<Props>(), {
                             <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-300"> Home </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink class="font-semibold text-gray-300"> Assets </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-300"> Assets </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <NavigationMenuLink class="font-semibold text-gray-300"> Contact </NavigationMenuLink>
@@ -79,7 +79,7 @@ withDefaults(defineProps<Props>(), {
         </div>
 
         <div class="py-10">
-            <div class="flex flex-3/4 justify-center">
+            <div class="w-3/4 flex flex-col mx-auto justify-center">
                 <slot />
             </div>
         </div>
