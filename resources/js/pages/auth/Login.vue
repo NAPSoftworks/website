@@ -10,6 +10,7 @@ import { LoaderCircle } from 'lucide-vue-next';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { onMounted, ref, watch } from 'vue';
 
 defineProps<{
     status?: string;
@@ -40,6 +41,24 @@ const submitRegister = () => {
         onFinish: () => registerForm.reset('password', 'password_confirmation'),
     });
 };
+
+const selectedTab = ref<'login' | 'register'>('login');
+
+onMounted(() => {
+    const url = new URL(window.location.href);
+    const tab = url.searchParams.get('tab');
+
+    if (tab === 'login' || tab === 'register') {
+        selectedTab.value = tab;
+    }
+});
+
+watch(selectedTab, (value) => {
+    const url = new URL(window.location.href);
+
+    url.searchParams.set('tab', value);
+    window.history.replaceState({}, '', url);
+});
 </script>
 
 <template>
@@ -47,7 +66,7 @@ const submitRegister = () => {
         <Head title="Log in" />
         <Card class="mx-auto">
             <CardContent class="flex flex-col items-center justify-center gap-4">
-                <Tabs default-value="login" class="w-[400px]">
+                <Tabs v-model="selectedTab" class="w-[400px]">
                     <TabsList class="grid w-full grid-cols-2">
                         <TabsTrigger value="login" class="cursor-pointer">
                             Log in
