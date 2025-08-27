@@ -7,15 +7,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*@theme inline {*/
-/*    --color-primary: #5f8db4;*/
-/*    --color-secondary: #68968a;*/
-/*    --color-accent: #6a4a86;*/
-
-/*    --color-card: var(--card);*/
-/*    --color-card-foreground: var(--card-foreground);*/
-/*}*/
-
 @theme inline {
     --font-sans: Instrument Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
@@ -38,11 +29,11 @@
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
 
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
 
     --color-destructive: var(--destructive);
     --color-destructive-foreground: var(--destructive-foreground);
