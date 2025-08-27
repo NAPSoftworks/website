@@ -171,12 +171,6 @@
     background: linear-gradient(30deg, #5f8db4, #68968a, #6a4a86);
 }
 
-.bg-mesh {
-    background-image: url('img/background_mesh.png');
-    background-repeat: repeat;
-    animation: moveBackground 600s linear infinite;
-}
-
 @keyframes moveBackground {
     0% {
         background-position: 100% -100%;
