@@ -3,7 +3,9 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Product;
-class ProductRepository extends AbstractRepository
+use App\Repositories\Contracts\ProductRepositoryContract;
+
+class ProductRepository extends AbstractRepository implements ProductRepositoryContract
 {
     /**
      * @param Product $product

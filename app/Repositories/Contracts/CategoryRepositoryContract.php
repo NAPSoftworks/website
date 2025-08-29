@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Contracts;
 
-use App\Models\Category;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,9 +9,9 @@ interface CategoryRepositoryContract extends AbstractRepositoryContract
 {
     /**
      * @param mixed $id
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function findWithProducts(mixed $id): ?Category;
+    public function findWithProducts(mixed $id): ?Model;
 
     /**
      * @param int $limit

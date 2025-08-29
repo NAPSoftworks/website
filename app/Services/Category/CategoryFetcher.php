@@ -5,12 +5,12 @@ namespace App\Services\Category;
 use App\Repositories\Eloquent\CategoryRepository;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
-class CategoryFetcher
+readonly class CategoryFetcher
 {
     /**
      * @param \App\Repositories\Eloquent\CategoryRepository $categoryRepository
      */
-    public function __construct(private readonly CategoryRepository $categoryRepository)
+    public function __construct(private CategoryRepository $categoryRepository)
     {
         //
     }
