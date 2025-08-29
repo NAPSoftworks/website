@@ -13,5 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public array $bindings = [
         Contracts\CategoryRepositoryContract::class => Eloquent\CategoryRepository::class,
+        Contracts\ContactRepositoryContract::class => Eloquent\ContactRepository::class,
+        Contracts\ProductRepositoryContract::class => Eloquent\ProductRepository::class,
     ];
 }
