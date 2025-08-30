@@ -167,6 +167,10 @@
     }
 }
 
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 .bg-gradient {
     background: linear-gradient(30deg, #5f8db4, #68968a, #6a4a86);
 }

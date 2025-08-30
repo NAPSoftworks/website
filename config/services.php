@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'google' => [
+        'recaptcha' => [
+            'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
+            'key' => env('GOOGLE_RECAPTCHA_KEY'),
+        ],
+    ],
+
 ];
