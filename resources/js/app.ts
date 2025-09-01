@@ -22,6 +22,3 @@ createInertiaApp({
         color: '#4B5563',
     },
 }).then(() => initializeTheme());
-
-// This will set light / dark mode on page load...
-// initializeTheme();

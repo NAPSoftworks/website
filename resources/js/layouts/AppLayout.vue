@@ -10,7 +10,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { UserCircle } from 'lucide-vue-next';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
-import { computed, watch } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
+import CookieConsent from '@/components/cookie/CookieConsent.vue';
 
 interface Props {
     breadcrumbs?: BreadcrumbItemType[];
@@ -24,15 +25,37 @@ const page = usePage<AppPageProps>();
 const status = computed(() => {
     return page.props.flash.status;
 });
+const cookieConsent = ref<InstanceType<typeof CookieConsent> | null>(null);
+
+const openCookieSettings = (event: MouseEvent) => {
+    event.preventDefault();
+
+    if (cookieConsent?.value) {
+        cookieConsent.value.showModal = true;
+    }
+};
 
 // Watcher to show toaster notification
 watch([status], () => {
-    toast(status, {
+    if (!status.value) return;
+
+    toast.success(status, {
         position: 'top-center',
         autoClose: 2500,
         closeOnClick: true,
         pauseOnHover: true,
+        onClose: () => {
+            page.props.flash.status = null;
+        },
     });
+});
+
+onMounted(() => {
+    window.addEventListener('open-cookie-settings', openCookieSettings as EventListener);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('open-cookie-settings', openCookieSettings as EventListener);
 });
 </script>
 
@@ -40,7 +63,7 @@ watch([status], () => {
     <div class="min-h-screen bg-muted">
         <Head title="NAP Softworks" />
         <div class="bg-gradient h-16 bg-gray-600/20 shadow-lg">
-            <div class="mx-auto flex h-full max-w-3/4 items-center justify-between">
+            <div class="mx-auto flex h-full w-9/10 items-center justify-between xl:w-3/4">
                 <div>
                     <Link :href="route('home')" title="NAP Softworks home page">
                         <img :src="`/img/nap_softworks_logo_icon.png`" class="max-h-10" alt="NAP Softworks logo" />
@@ -49,13 +72,13 @@ watch([status], () => {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-300">Home</NavigationMenuLink>
+                            <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-300"> Home </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-300">Assets</NavigationMenuLink>
+                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-300"> Assets </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('contact.index')" class="font-semibold text-gray-300">Contact</NavigationMenuLink>
+                            <NavigationMenuLink :href="route('contact.index')" class="font-semibold text-gray-300"> Contact </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <DropdownMenu v-if="$page.props.auth.user">
@@ -105,10 +128,14 @@ watch([status], () => {
         </div>
 
         <div class="py-10">
-            <div class="mx-auto flex w-3/4 flex-col justify-center">
+            <div class="mx-auto flex w-9/10 flex-col justify-center xl:w-3/4">
                 <slot />
             </div>
         </div>
         <div class="footer flex-1 text-center">&copy; 2025 NAP Softworks | All rights reserved.</div>
+        <div class="footer flex-1 text-center">
+            <a href="#" @click="openCookieSettings">Cookie settings</a>
+        </div>
+        <CookieConsent ref="cookieConsent" />
     </div>
 </template>

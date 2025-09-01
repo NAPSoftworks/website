@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,6 +22,8 @@ Route::get('categories', [CategoryController::class, 'index'])->name('categories
 
 Route::get('categories/{category}/products/{product}', [ProductController::class, 'show'])
     ->name('products.show');
+
+Route::post('cookies', [CookieController::class, 'store'])->name('cookies.store');
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "238758776cef75e40b61f11e6f2e00e2",
+    "content-hash": "770d61109f705cc0347fa3b4f889ce96",
     "packages": [
         {
             "name": "brick/math",
@@ -2073,6 +2073,72 @@
                 }
             ],
             "time": "2024-12-08T08:18:47+00:00"
+        },
+        {
+            "name": "martin-schenk/laravel-cookie-consent",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/martinschenk/laravel-cookie-consent.git",
+                "reference": "df26b39435e0a047ff7b7bce3cc5c46c74afc6c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martinschenk/laravel-cookie-consent/zipball/df26b39435e0a047ff7b7bce3cc5c46c74afc6c1",
+                "reference": "df26b39435e0a047ff7b7bce3cc5c46c74afc6c1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^9.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MartinSchenk\\CookieConsent\\CookieConsentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MartinSchenk\\CookieConsent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Schenk",
+                    "email": "info@martin-schenk.es"
+                }
+            ],
+            "description": "GDPR-compliant cookie consent system with minimal dependencies for Laravel 11 and 12",
+            "keywords": [
+                "CCPA",
+                "alpine-js",
+                "consent",
+                "cookie",
+                "cookie-banner",
+                "gdpr",
+                "google-analytics",
+                "laravel",
+                "multilingual",
+                "privacy",
+                "tailwind"
+            ],
+            "support": {
+                "issues": "https://github.com/martinschenk/laravel-cookie-consent/issues",
+                "source": "https://github.com/martinschenk/laravel-cookie-consent/tree/v0.3.0"
+            },
+            "time": "2025-08-21T20:02:13+00:00"
         },
         {
             "name": "monolog/monolog",
