@@ -46,9 +46,11 @@ export interface Category {
 
 export interface Product {
     id: number;
+    category_id: number;
     name: string;
     description: string;
     is_public: boolean;
+    created_at: string;
 }
 
 export type BreadcrumbItemType = BreadcrumbItem;

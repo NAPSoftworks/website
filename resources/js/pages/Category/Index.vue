@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { type BreadcrumbItem, Category, Product } from '@/types';
 import { computed, ComputedRef, ref } from 'vue';
 import { cn } from '@/lib/utils';
+import ProductItem from '@/pages/Category/ProductItem.vue';
 
 const props = defineProps<{ categories: Array<Category> }>();
 
@@ -17,21 +18,17 @@ const breadcrumbs: BreadcrumbItem[] = [
 const selectedCategoryId = ref(1);
 
 const selectedCategoryProducts: ComputedRef<Product[] | undefined> = computed(() => {
-    const category = props.categories.find((_category) => _category.id === selectedCategoryId.value)
+    const category = props.categories.find((_category) => _category.id === selectedCategoryId.value);
 
     return category?.products;
 });
-
 </script>
 
 <template>
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="mb-10 ml-auto flex">
             <Card
-                :class="cn(
-                    'mx-1 px-4 py-2 select-none cursor-pointer',
-                    category.id === selectedCategoryId ? 'bg-accent text-background' : '',
-                )"
+                :class="cn('mx-1 cursor-pointer px-4 py-2 select-none', category.id === selectedCategoryId ? 'bg-accent text-background' : '')"
                 v-for="category in props.categories"
                 :key="category.id"
                 :bordered="false"
@@ -42,13 +39,9 @@ const selectedCategoryProducts: ComputedRef<Product[] | undefined> = computed(()
                 </div>
             </Card>
         </div>
-        <div class="grid grid-cols-3 gap-2 gap-y-4">
-            <Card class="mx-1 px-4 py-2" v-for="product in selectedCategoryProducts" :key="product.id">
-                {{ product.name }}
-            </Card>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <ProductItem v-for="product in selectedCategoryProducts" :key="product.id" :product="product" />
         </div>
-        <div class="flex mt-4 ml-auto text-muted-foreground italic">
-            Showing {{ selectedCategoryProducts?.length }} products.
-        </div>
+        <div class="mt-4 ml-auto flex text-muted italic">Showing {{ selectedCategoryProducts?.length }} products.</div>
     </AppLayout>
 </template>

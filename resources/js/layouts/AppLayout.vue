@@ -132,9 +132,11 @@ onUnmounted(() => {
                 <slot />
             </div>
         </div>
-        <div class="footer flex-1 text-center">&copy; 2025 NAP Softworks | All rights reserved.</div>
-        <div class="footer flex-1 text-center">
-            <a href="#" @click="openCookieSettings">Cookie settings</a>
+        <div class="footer flex-1 text-center pb-6">
+            <div>&copy; 2025 NAP Softworks | All rights reserved.</div>
+            <div class="footer flex-1 text-center">
+                <a href="#" @click="openCookieSettings">Cookie settings</a>
+            </div>
         </div>
         <CookieConsent ref="cookieConsent" />
     </div>
