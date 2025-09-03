@@ -60,7 +60,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen bg-muted">
+    <div class="min-h-screen bg-muted/10">
         <Head title="NAP Softworks" />
         <div class="bg-gradient h-16 bg-gray-600/20 shadow-lg">
             <div class="mx-auto flex h-full w-9/10 items-center justify-between xl:w-3/4">

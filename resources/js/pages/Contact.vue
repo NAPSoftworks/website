@@ -64,7 +64,7 @@ const submit = () => {
                         <div>
                             <figure class="float-left mr-6 w-40">
                                 <img src="/img/pb_profile_photo.jpg" class="h-auto w-full rounded-xl" alt="NAP Softworks founder's photo" />
-                                <figcaption class="mt-1 text-sm text-muted-foreground italic">Founder of NAP Softworks</figcaption>
+                                <figcaption class="mt-1 text-sm text-muted italic">Founder of NAP Softworks</figcaption>
                             </figure>
                             <p class="mb-4 text-justify">
                                 Skilled and ambitious software developer with a passion for creating innovative and user-friendly applications, fluent
@@ -104,7 +104,7 @@ const submit = () => {
                                 <Textarea id="message" v-model="form.message" placeholder="Message" :disabled="isDisabled" />
                                 <InputError :message="form.errors.message" />
                             </InputGroup>
-                            <div class="text-justify text-sm text-muted-foreground italic">
+                            <div class="text-justify text-sm text-muted italic">
                                 This site is protected by reCAPTCHA and the Google
                                 <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
                                 <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
