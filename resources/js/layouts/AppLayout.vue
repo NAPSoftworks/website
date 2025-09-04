@@ -63,7 +63,7 @@ onUnmounted(() => {
     <div class="min-h-screen bg-muted/10">
         <Head title="NAP Softworks" />
         <div class="bg-gradient h-16 bg-gray-600/20 shadow-lg">
-            <div class="mx-auto flex h-full w-9/10 items-center justify-between xl:w-3/4">
+            <div class="mx-auto flex h-full w-9/10 items-center justify-between xl:w-3/5">
                 <div>
                     <Link :href="route('home')" title="NAP Softworks home page">
                         <img :src="`/img/nap_softworks_logo_icon.png`" class="max-h-10" alt="NAP Softworks logo" />
@@ -128,7 +128,7 @@ onUnmounted(() => {
         </div>
 
         <div class="py-10">
-            <div class="mx-auto flex w-9/10 flex-col justify-center xl:w-3/4">
+            <div class="mx-auto flex w-9/10 flex-col justify-center xl:w-3/5">
                 <slot />
             </div>
         </div>
