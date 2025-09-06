@@ -72,13 +72,13 @@ onUnmounted(() => {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-300"> Home </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-100"> Home </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-300"> Assets </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-100"> Assets </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('contact.index')" class="font-semibold text-gray-300"> Contact </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('contact.index')" class="font-semibold text-gray-100"> Contact </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <DropdownMenu v-if="$page.props.auth.user">
