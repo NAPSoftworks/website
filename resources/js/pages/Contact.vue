@@ -63,7 +63,7 @@ const submit = () => {
                         <h2 class="mb-4 w-full text-2xl font-bold">About NAP Softworks</h2>
                         <div>
                             <figure class="float-left mr-6 w-40">
-                                <img src="/img/pb_profile_photo.jpg" class="h-auto w-full rounded-xl" alt="NAP Softworks founder's photo" />
+                                <img src="/img/pb_profile_photo.webp" class="h-auto w-full rounded-xl" alt="NAP Softworks founder's photo" />
                                 <figcaption class="mt-1 text-sm text-muted italic">Founder of NAP Softworks</figcaption>
                             </figure>
                             <p class="mb-4 text-justify">

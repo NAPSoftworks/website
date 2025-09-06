@@ -66,7 +66,7 @@ onUnmounted(() => {
             <div class="mx-auto flex h-full w-9/10 items-center justify-between xl:w-3/5">
                 <div>
                     <Link :href="route('home')" title="NAP Softworks home page">
-                        <img :src="`/img/nap_softworks_logo_icon.png`" class="max-h-10" alt="NAP Softworks logo" />
+                        <img :src="`/img/nap_softworks_logo_icon.webp`" class="max-h-10" alt="NAP Softworks logo" />
                     </Link>
                 </div>
                 <NavigationMenu>
