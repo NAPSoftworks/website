@@ -44,6 +44,7 @@ const openCookieSettings = () => {
 const submit = () => {
     if (isDisabled.value) return;
 
+
     window.grecaptcha.execute($page.props.recaptcha_key, { action: 'contact' }).then((token: string) => {
         form.captcha_token = token;
 
@@ -91,17 +92,17 @@ const submit = () => {
                         <form :class="cn('grid gap-6 px-4', disabledClass)" :disabled="isDisabled" @submit.prevent="submit">
                             <InputGroup>
                                 <Label for="name">Name</Label>
-                                <Input id="name" type="text" v-model="form.name" placeholder="Name" :disabled="isDisabled" />
+                                <Input id="name" type="text" v-model="form.name" placeholder="Name" :disabled="isDisabled" required />
                                 <InputError :message="form.errors.name" />
                             </InputGroup>
                             <InputGroup>
                                 <Label for="email">E-mail address</Label>
-                                <Input id="email" type="email" v-model="form.email" placeholder="E-mail address" :disabled="isDisabled" />
+                                <Input id="email" type="email" v-model="form.email" placeholder="E-mail address" :disabled="isDisabled" required />
                                 <InputError :message="form.errors.email" />
                             </InputGroup>
                             <InputGroup>
                                 <Label for="message">Message</Label>
-                                <Textarea id="message" v-model="form.message" placeholder="Message" :disabled="isDisabled" />
+                                <Textarea id="message" v-model="form.message" placeholder="Message" :disabled="isDisabled" required />
                                 <InputError :message="form.errors.message" />
                             </InputGroup>
                             <div class="text-justify text-sm text-muted italic">
