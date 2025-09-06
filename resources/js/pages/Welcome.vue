@@ -8,10 +8,10 @@ import { Link } from '@inertiajs/vue3';
     <AppLayout>
         <Card>
             <CardContent>
-                <div class="flex flex-col gap-10 sm:flex-row">
+                <div class="flex flex-col lg:flex-row gap-10">
                     <div>
                         <div class="aspect-4/3 overflow-hidden rounded-xl drop-shadow-lg">
-                            <video class="aspect-4/3" autoplay muted loop>
+                            <video class="w-full aspect-4/3" autoplay muted loop>
                                 <source src="/video/joyriders_1.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
