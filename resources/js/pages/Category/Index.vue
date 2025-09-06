@@ -17,10 +17,10 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 const selectedCategoryId = ref(1);
 
-const selectedCategoryProducts: ComputedRef<Product[] | undefined> = computed(() => {
+const selectedCategoryProducts: ComputedRef<Product[]> = computed(() => {
     const category = props.categories.find((_category) => _category.id === selectedCategoryId.value);
 
-    return category?.products;
+    return category?.products ?? [];
 });
 </script>
 
@@ -39,7 +39,7 @@ const selectedCategoryProducts: ComputedRef<Product[] | undefined> = computed(()
                 </div>
             </Card>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <ProductItem v-for="product in selectedCategoryProducts" :key="product.id" :product="product" />
         </div>
         <div class="mt-4 ml-auto flex text-muted italic">Showing {{ selectedCategoryProducts?.length }} products.</div>
