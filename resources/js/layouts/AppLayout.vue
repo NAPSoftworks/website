@@ -116,7 +116,7 @@ onUnmounted(() => {
                                 >
                                     <Avatar class="size-8 overflow-hidden rounded-full">
                                         <AvatarFallback
-                                            class="rounded-lg bg-neutral-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
+                                            class="rounded-lg bg-neutral-200 font-semibold text-accent dark:bg-neutral-700 dark:text-white"
                                         >
                                             <UserCircle />
                                         </AvatarFallback>
