@@ -8,10 +8,11 @@ import { Button } from '@/components/ui/button';
 import UserMenuContent from '@/components/UserMenuContent.vue';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { UserCircle } from 'lucide-vue-next';
-import { toast } from 'vue3-toastify';
-import 'vue3-toastify/dist/index.css';
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 import CookieConsent from '@/components/cookie/CookieConsent.vue';
+import { toast } from 'vue-sonner';
+import { Toaster } from '@/components/ui/sonner'
+import 'vue-sonner/style.css'
 
 interface Props {
     breadcrumbs?: BreadcrumbItemType[];
@@ -41,10 +42,11 @@ watch([status], () => {
 
     toast.success(status, {
         position: 'top-center',
-        autoClose: 2500,
-        closeOnClick: true,
-        pauseOnHover: true,
-        onClose: () => {
+        duration: 3000,
+        onAutoClose: () => {
+            page.props.flash.status = null;
+        },
+        onDismiss: () => {
             page.props.flash.status = null;
         },
     });
@@ -139,5 +141,6 @@ onUnmounted(() => {
             </div>
         </div>
         <CookieConsent ref="cookieConsent" />
+        <Toaster class="pointer-events-auto" position="top-center" rich-colors />
     </div>
 </template>
