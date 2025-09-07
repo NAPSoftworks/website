@@ -17,11 +17,7 @@ class CategoryFetcherTest extends TestCase
         $categoryFetcher = app()->make(CategoryFetcher::class);
 
         /** @var \App\Models\Category $category1 */
-        $category1 = Category::factory()->create()->each(
-            function ($category): void {
-                Product::factory()->create(['category_id' => $category->id]);
-            }
-        );
+        $category1 = Category::factory()->create();
 
         /** @var \App\Models\Category $category2 */
         $category2 = Category::factory()->create();
