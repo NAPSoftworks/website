@@ -89,24 +89,30 @@ defineExpose({
                             type="button"
                             @click="cancelSettings"
                         >
-                            <span class="sr-only">Close</span>
+                            <span class="sr-only">{{ $t('global.close') }}</span>
                             <svg class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
-                    <AlertDialogTitle class="mb-4 text-center text-xl font-bold">We value your privacy... seriously.</AlertDialogTitle>
+                    <AlertDialogTitle class="mb-4 text-center text-xl font-bold">
+                        {{ $t('cookie-consent.we-value-your-privacy-seriously') }}.
+                    </AlertDialogTitle>
                     <AlertDialogDescription>
                         <div class="mt-6 space-y-4">
                             <!-- Essentials Cookies -->
                             <div class="rounded-lg border border-gray-200 p-4">
                                 <div class="flex items-center justify-between">
                                     <div>
-                                        <h4 class="font-semibold text-gray-600">Essentials</h4>
-                                        <p class="mt-1 text-sm text-gray-600">Essential description goes here</p>
+                                        <h4 class="font-semibold text-gray-600">{{ $t('cookie-consent.essential') }}</h4>
+                                        <p class="mt-1 text-sm text-gray-600">
+                                            {{ $t('cookie-consent.essential-description') }}
+                                        </p>
                                     </div>
                                     <div class="ml-4">
-                                        <span class="inline-block rounded bg-gray-100 px-2 py-1 text-xs text-gray-800"> Mandatory </span>
+                                        <span class="inline-block rounded bg-gray-100 px-2 py-1 text-xs text-gray-800">
+                                            {{ $t('cookie-consent.mandatory') }}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -115,8 +121,12 @@ defineExpose({
                             <div class="rounded-lg border border-gray-200 p-4">
                                 <div class="flex items-center justify-between">
                                     <div>
-                                        <h4 class="font-semibold text-gray-600">Local analytics</h4>
-                                        <p class="mt-1 text-sm text-gray-600">Analytics description goes here</p>
+                                        <h4 class="font-semibold text-gray-600">
+                                            {{ $t('cookie-consent.local-analytics') }}
+                                        </h4>
+                                        <p class="mt-1 text-sm text-gray-600">
+                                            {{ $t('cookie-consent.local-analytics-description') }}
+                                        </p>
                                     </div>
                                     <div class="ml-4">
                                         <label class="inline-flex cursor-pointer items-center">
@@ -130,8 +140,12 @@ defineExpose({
                             <div class="rounded-lg border border-gray-200 p-4">
                                 <div class="flex items-center justify-between">
                                     <div>
-                                        <h4 class="font-semibold text-gray-600">Google services</h4>
-                                        <p class="mt-1 text-sm text-gray-600">Preferences description goes here</p>
+                                        <h4 class="font-semibold text-gray-600">
+                                            {{ $t('cookie-consent.google-services') }}
+                                        </h4>
+                                        <p class="mt-1 text-sm text-gray-600">
+                                            {{ $t('cookie-consent.google-services-description') }}
+                                        </p>
                                     </div>
                                     <div class="ml-4">
                                         <label class="inline-flex cursor-pointer items-center">
@@ -144,15 +158,19 @@ defineExpose({
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <Button class="cursor-pointer rounded-md bg-primary px-4 py-2 text-sm hover:bg-primary/90" @click="denyAll"> Deny all </Button>
+                    <Button class="cursor-pointer rounded-md bg-primary px-4 py-2 text-sm hover:bg-primary/90" @click="denyAll">
+                        {{ $t('cookie-consent.deny-all') }}
+                    </Button>
 
-                    <Button class="cursor-pointer rounded-md bg-primary px-4 py-2 text-sm hover:bg-primary/90" @click="allowAll"> Allow all </Button>
+                    <Button class="cursor-pointer rounded-md bg-primary px-4 py-2 text-sm hover:bg-primary/90" @click="allowAll">
+                        {{ $t('cookie-consent.allow-all') }}
+                    </Button>
 
                     <AlertDialogAction
                         class="cursor-pointer rounded-md bg-secondary px-4 py-2 text-sm hover:bg-secondary/90"
                         @click="saveSettings()"
                     >
-                        Save changes
+                        {{ $t('cookie-consent.save-changes') }}
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>

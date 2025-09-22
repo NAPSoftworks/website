@@ -74,13 +74,19 @@ onUnmounted(() => {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-100"> Home </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('home')" class="font-semibold text-gray-100">
+                                {{ $t('layout.home') }}
+                            </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-100"> Assets </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('categories.index')" class="font-semibold text-gray-100">
+                                {{ $t('layout.assets') }}
+                            </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink :href="route('contact.index')" class="font-semibold text-gray-100"> Contact </NavigationMenuLink>
+                            <NavigationMenuLink :href="route('contact.index')" class="font-semibold text-gray-100">
+                                {{ $t('layout.contact') }}
+                            </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <DropdownMenu v-if="$page.props.auth.user">
@@ -108,7 +114,7 @@ onUnmounted(() => {
                                     <UserMenuContent :user="$page.props.auth.user" />
                                 </DropdownMenuContent>
                             </DropdownMenu>
-                            <Link v-else :href="route('authenticate')" title="Account">
+                            <Link v-else :href="route('authenticate')" :title="$t('layout.account')">
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -116,7 +122,7 @@ onUnmounted(() => {
                                 >
                                     <Avatar class="size-8 overflow-hidden rounded-full">
                                         <AvatarFallback
-                                            class="rounded-lg bg-neutral-200 font-semibold text-accent dark:bg-neutral-700 dark:text-white"
+                                            class="rounded-lg bg-neutral-200 font-semibold text-black dark:bg-neutral-700 dark:text-white"
                                         >
                                             <UserCircle />
                                         </AvatarFallback>
@@ -134,10 +140,10 @@ onUnmounted(() => {
                 <slot />
             </div>
         </div>
-        <div class="footer flex-1 text-center pb-6">
-            <div>&copy; 2025 NAP Softworks | All rights reserved.</div>
+        <div class="footer flex-1 pb-6 text-center">
+            <div>&copy; 2025 NAP Softworks | {{ $t('layout.all-rights-reserved') }}.</div>
             <div class="footer flex-1 text-center">
-                <a href="#" @click="openCookieSettings">Cookie settings</a>
+                <a href="#" @click="openCookieSettings">{{ $t('layout.cookie-settings') }}</a>
             </div>
         </div>
         <CookieConsent ref="cookieConsent" />
