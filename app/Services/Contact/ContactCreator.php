@@ -3,13 +3,16 @@
 namespace App\Services\Contact;
 
 use App\Models\Contact;
-use App\Repositories\Eloquent\ContactRepository;
+use App\Repositories\Contracts\ContactRepositoryContract;
 
 readonly class ContactCreator
 {
-    public function __construct(private ContactRepository $contactRepository)
+    /**
+     * @param \App\Repositories\Contracts\ContactRepositoryContract $contactRepository
+     */
+    public function __construct(private ContactRepositoryContract $contactRepository)
     {
-
+        //
     }
 
     /**
