@@ -13,28 +13,29 @@ import { Link } from '@inertiajs/vue3';
                         <div class="aspect-4/3 overflow-hidden rounded-xl drop-shadow-lg">
                             <video class="w-full aspect-4/3" autoplay muted loop>
                                 <source src="/video/joyriders_1.mp4" type="video/mp4" />
-                                Your browser does not support the video tag.
+                                {{ $t('global.your-browser-does-not-support-video-tag') }}.
                             </video>
                         </div>
                     </div>
                     <div class="flex-1/2">
-                        <h3 class="text-xl font-bold">A new upcoming game!</h3>
+                        <h3 class="text-xl font-bold">{{ $t('welcome.a-new-upcoming-game') }}</h3>
                         <h2 class="text-4xl font-extrabold uppercase">Joyriders</h2>
                         <div class="mt-4 text-justify">
-                            A 2.5D top-down shooter game set in Chem City, where you play as an ambitious gangster who wants to rule the city. Your
-                            goal is to win other gangs' respect and climb the crime ladder by any means necessary.
+                            {{ $t('welcome.joyriders-description') }}
                         </div>
-                        <h4 class="mt-4 text-xl font-bold">Features:</h4>
+                        <h4 class="mt-4 text-xl font-bold">{{ $t('global.features') }}:</h4>
                         <ul class="list-inside list-disc">
-                            <li>2.5D top-down retro-inspired graphics,</li>
-                            <li>Realistic city environment,</li>
-                            <li>Various missions to accomplish,</li>
-                            <li>Plenty of cars to joyride,</li>
-                            <li>A whole pallet of weapons to wreak havoc with,</li>
-                            <li>Radio stations to enjoy,</li>
-                            <li>And much more!</li>
+                            <li>{{ $t('welcome.features.2d-retro-graphics') }},</li>
+                            <li>{{ $t('welcome.features.realistic-city-environment') }},</li>
+                            <li>{{ $t('welcome.features.various-missions-to-accomplish') }},</li>
+                            <li>{{ $t('welcome.features.plenty-of-cars-to-joyride') }},</li>
+                            <li>{{ $t('welcome.features.a-whole-collection-of-weapons-to-wreak-havoc-with') }},</li>
+                            <li>{{ $t('welcome.features.radio-stations-to-enjoy') }},</li>
+                            <li>{{ $t('welcome.features.and-much-more') }}!</li>
                         </ul>
-                        <div class="mt-4 text-sm text-muted italic">Features are subject to change</div>
+                        <div class="mt-4 text-sm text-muted italic">
+                            {{ $t('welcome.features.features-are-subject-to-change') }}
+                        </div>
                     </div>
                 </div>
             </CardContent>
@@ -55,11 +56,11 @@ import { Link } from '@inertiajs/vue3';
                 </div>
             </div>
             <div id="content" class="flex flex-col flex-1 px-16 pb-8 lg:pb-0 justify-center items-center">
-                <div class="text-2xl font-bold uppercase">Your place for free game assets!</div>
-                <div>Go grab some assets and speed up development.</div>
+                <div class="text-2xl font-bold uppercase">{{ $t('welcome.your-place-for-free-game-assets') }}!</div>
+                <div>{{ $t('welcome.go-grab-some-assets-and-speed-up-development') }}</div>
                 <div class="mt-4">
                     <Link :href="route('categories.index')" class="cursor-pointer text-lg font-bold underline">
-                        Browse assets now
+                        {{ $t('welcome.browse-assets-now') }}
                     </Link>
                 </div>
             </div>

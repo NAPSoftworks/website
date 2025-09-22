@@ -42,6 +42,8 @@ const selectedCategoryProducts: ComputedRef<Product[]> = computed(() => {
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <ProductItem v-for="product in selectedCategoryProducts" :key="product.id" :product="product" />
         </div>
-        <div class="mt-4 ml-auto flex text-muted italic">Showing {{ selectedCategoryProducts?.length }} products.</div>
+        <div class="mt-4 ml-auto flex text-muted italic">
+            {{ $t('global.showing-n-products', { n: selectedCategoryProducts?.length.toString() }) }}.
+        </div>
     </AppLayout>
 </template>

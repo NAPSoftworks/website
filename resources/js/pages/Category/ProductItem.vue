@@ -20,7 +20,7 @@ const visitProduct = () => router.visit(route('products.show', { category: props
             <div class="text-muted italic">Some description goes here.</div>
         </CardContent>
         <CardAction class="flex w-full px-6 justify-end mt-auto">
-            <Button class="cursor-pointer" @click="visitProduct()">Details</Button>
+            <Button class="cursor-pointer" @click="visitProduct()">{{ $t('global.details') }}</Button>
         </CardAction>
     </Card>
 </template>

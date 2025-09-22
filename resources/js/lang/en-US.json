@@ -1,0 +1,66 @@
+{
+    "global": {
+        "and": "and",
+        "apply": "apply",
+        "close": "Close",
+        "details": "Details",
+        "features": "Features",
+        "your-browser-does-not-support-video-tag": "Your browser does not support the video tag",
+        "showing-n-products": "Showing {n} products",
+        "this-site-is-protected-by-recaptcha": "This site is protected by reCAPTCHA and the Google",
+        "privacy-policy": "Privacy Policy",
+        "terms-of-service": "Terms of Service"
+    },
+    "layout": {
+        "home": "Home",
+        "account": "Account",
+        "assets": "Assets",
+        "contact": "Contact",
+        "all-rights-reserved": "All rights reserved",
+        "cookie-settings": "Cookie settings"
+    },
+    "cookie-consent": {
+        "we-value-your-privacy-seriously": "We value your privacy... seriously",
+        "mandatory": "Mandatory",
+        "essential": "Essential",
+        "essential-description": "Essential description goes here",
+        "local-analytics": "Local analytics",
+        "local-analytics-description": "Analytics description goes here",
+        "google-services": "Google services",
+        "google-services-description": "Preferences description goes here",
+        "save-changes": "Save Changes",
+        "deny-all": "Deny all",
+        "allow-all": "Allow all"
+    },
+    "welcome": {
+        "a-new-upcoming-game": "A new upcoming game!",
+        "joyriders": "Joyriders",
+        "joyriders-description": "A 2.5D top-down shooter game set in Chem City, where you play as an ambitious gangster who wants to rule the city. Your goal is to win other gangs' respect and climb the crime ladder by any means necessary.",
+        "features": {
+            "2d-retro-graphics": "2.5D top-down retro-inspired graphics",
+            "realistic-city-environment": "Realistic city environment",
+            "various-missions-to-accomplish": "Various missions to accomplish",
+            "plenty-of-cars-to-joyride": "Plenty of cars to joyride",
+            "a-whole-collection-of-weapons-to-wreak-havoc-with": "A whole collection of weapons to wreak havoc with",
+            "radio-stations-to-enjoy": "Radio stations to enjoy",
+            "and-much-more": "And much more!",
+            "features-are-subject-to-change": "Features are subject to change"
+        },
+        "your-place-for-free-game-assets": "Your place for free game assets",
+        "go-grab-some-assets-and-speed-up-development": "Go grab some assets and speed up development.",
+        "browse-assets-now": "Browse assets now"
+    },
+    "contact": {
+        "about-nap-softworks": "About NAP Softworks",
+        "founder-of-nap-softworks": "Founder of NAP Softworks",
+        "nap-softworks-founders-photo": "NAP Softworks founder's photo",
+        "description": "Skilled and ambitious software developer with a passion for creating innovative and user-friendly applications, fluent in Laravel, Vue.js, and Tailwind CSS. With a strong foundation in web development, I specialize in creating dynamic and responsive websites that meet the needs of businesses of all sizes. I am dedicated to delivering high-quality software solutions that meet the needs of my clients and users.",
+        "contact-us": "Contact us",
+        "name": "Name",
+        "email": "E-mail address",
+        "message": "Message",
+        "send-message": "Send message",
+        "contact-form-requires-consent": "The contact form is disabled until you give consent to use the Google reCAPTCHA.",
+        "open-cookie-settings": "Open cookie settings"
+    }
+}
